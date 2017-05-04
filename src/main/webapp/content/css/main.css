@@ -370,3 +370,46 @@ Social Buttons
 }
 
 /* jhipster-needle-css-add-main JHipster will add new css style */
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+    background-color: white;
+    text-decoration: none;
+    border-radius: 0.1em;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.sidenav a {
+    padding-left: 1em;
+    padding-top: 0.15em;
+    padding-bottom: 0.15em;
+    text-decoration: none; 
+    font-size: 1.3em;
+    color: black ;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    /*transform: scale(1.05);*/
+    color: black;
+    background-color: #c3c3a2;
+}
+
+.sidenav a:focus {
+    color: #ff6666;
+    background-color: #464646;
+} 
+
+.sidemenuLinkRigth {
+    padding-left: 1.7em !important;
+}
+
+.sidemenuLinkRigthRight {
+    padding-left: 2.4em !important;
+}
