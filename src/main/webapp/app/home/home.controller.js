@@ -14,6 +14,7 @@
         vm.isAuthenticated = null;
         vm.login = LoginService.open;
         vm.register = register;
+
         $scope.$on('authenticationSuccess', function() {
             getAccount();
         });
@@ -29,5 +30,19 @@
         function register () {
             $state.go('register');
         }
+
+        vm.cinema = function(){
+            $state.go('cinema');
+        }
+    
+        vm.bank = function(){
+            $state.go('bank');
+        }
+
+        vm.library = function(){
+            $state.go('library');
+        }
+
+
     }
 })();
