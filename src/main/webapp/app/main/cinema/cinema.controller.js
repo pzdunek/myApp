@@ -5,12 +5,26 @@
         .module('myApp')
         .controller('CinemaController',CinemaController);
 
-    CinemaController.$inject = [];
+    CinemaController.$inject = ['Theater'];
 
-    function CinemaController() {
+    function CinemaController(Theater) {
         var vm = this;
 
+        vm.selectedCinema;
         
+    	getAllTheaters();
+
+    	function getAllTheaters(){
+    		Theater.query(function(data) {
+                vm.theaters = data;
+              	console.log(data);
+                
+                  });
+            
+
+
+
+    	}  
 
     }
 })();

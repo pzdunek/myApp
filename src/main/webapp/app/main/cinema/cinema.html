@@ -1,4 +1,36 @@
 <div class="row text-center">
     <h3><strong>Tu będzie kino</strong></h3>
     </br>
-    
+    <div class="col-md-4"></div>
+
+    <div class="row">
+    	<div class="col-sm-4 form-group">
+        <label>Szybka rezerwacja </label>
+        
+
+
+        <select class="form-control" ng-model="vm.selectedCinema" ng-options="item as item for item in vm.theaters">
+        	<option value="" disabled selected>Wybierz kino</option>
+        	<option ></option>
+    	</select>
+    	<select class="form-control">
+        	<option value="" disabled selected>Wybierz film</option>
+    	</select>
+    	<select class="form-control">
+        	<option value="" disabled selected>Wybierz datę</option>
+    	</select>
+    	<select class="form-control">
+        	<option value="" disabled selected>Wybierz godzinę</option>
+    	</select>
+    </div>
+
+
+    </div>
+
+</div>
+
+
+ng-options="item as item for item 
+        in vm.kods 
+        | orderBy | filter: vm.search"
+        ng-model="vm.selectedKod"
