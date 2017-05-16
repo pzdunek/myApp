@@ -3,7 +3,10 @@ package pl.zdunek.myapp.web.rest.controllers;
 import pl.zdunek.myapp.config.Constants;
 import com.codahale.metrics.annotation.Timed;
 import pl.zdunek.myapp.domain.User;
+import pl.zdunek.myapp.domain.entity.Movie;
+import pl.zdunek.myapp.domain.entity.Theater;
 import pl.zdunek.myapp.repository.UserRepository;
+import pl.zdunek.myapp.repository.entity.MovieRepository;
 import pl.zdunek.myapp.security.AuthoritiesConstants;
 import pl.zdunek.myapp.service.MailService;
 import pl.zdunek.myapp.service.UserService;
@@ -27,6 +30,9 @@ import org.springframework.web.bind.annotation.*;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.*;
+import java.util.stream.Collectors;
+
+import javax.inject.Inject;
 
 /**
  * REST controller for managing users.
@@ -37,6 +43,5 @@ import java.util.*;
 @RequestMapping("/api")
 public class MovieResource {
 
-
-   
+	
 }

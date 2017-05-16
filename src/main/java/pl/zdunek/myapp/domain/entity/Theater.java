@@ -23,6 +23,9 @@ public class Theater implements Serializable {
 	@Column(name="number_of_seats", nullable=false, length=20)
 	private String numberOfSeats;
 
+	@Column(name="number_of_rows", nullable=false, length=1)
+	private String numberOfRows;
+	
 	//bi-directional many-to-one association to Show
 	@OneToMany(mappedBy="theater")
 	private List<Show> shows;
@@ -44,6 +47,15 @@ public class Theater implements Serializable {
 
 	public void setNumberOfSeats(String numberOfSeats) {
 		this.numberOfSeats = numberOfSeats;
+	}
+
+	
+	public String getNumberOfRows() {
+		return numberOfRows;
+	}
+
+	public void setNumberOfRows(String numberOfRows) {
+		this.numberOfRows = numberOfRows;
 	}
 
 	public List<Show> getShows() {

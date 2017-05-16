@@ -9,28 +9,29 @@
         
 
 
-        <select class="form-control" ng-model="vm.selectedCinema" ng-options="item as item for item in vm.theaters">
+        <select class="form-control" ng-model="vm.selectedCinema" ng-options="item as item for item in vm.theaters" ng-change="vm.changeThater()">
         	<option value="" disabled selected>Wybierz kino</option>
-        	<option ></option>
     	</select>
-    	<select class="form-control">
+    	<select class="form-control" ng-model="vm.selectedMovie" ng-options="movie as movie for movie in vm.films" ng-change="vm.changeMovie()">
         	<option value="" disabled selected>Wybierz film</option>
     	</select>
-    	<select class="form-control">
+    	<select class="form-control" ng-model="vm.selectedDate" ng-options="date as date for date in vm.dates">
         	<option value="" disabled selected>Wybierz datę</option>
     	</select>
-    	<select class="form-control">
+    	<select class="form-control" ng-model="vm.selectedHour">
         	<option value="" disabled selected>Wybierz godzinę</option>
+        	<option>18:00</option>
+        	<option>21:00</option>
     	</select>
+    
+    	<div class="row">
+    		<button type="button" class="btn btn-success" ng-click="vm.order()" style="margin-top: 10px;">Zamawiam</button>
+    	</div>
+
     </div>
+    
 
 
     </div>
 
 </div>
-
-
-ng-options="item as item for item 
-        in vm.kods 
-        | orderBy | filter: vm.search"
-        ng-model="vm.selectedKod"

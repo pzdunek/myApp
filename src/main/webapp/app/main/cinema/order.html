@@ -1,0 +1,37 @@
+<form name="deleteForm" ng-submit="vm.confirmDelete()">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title">Proszę wybrać miejsca</h4>
+    </div>
+    <div class="modal-body" >
+        <div class="row">
+            <div class="screen">EKRAN</div>
+        </div>
+
+        <div class="row">
+            <!-- <div class="seats"></div> -->
+            <table class="table" style="width: auto">
+                <!-- ng-repeat="(key, rang) in seats.map[seatQuality].seats"> -->
+                <tr ng-repeat="row in seats.map[seatQuality].seats" class="row">
+                    <h3 ng-if="seatQuality">{{seatQuality}}</h3>
+                    <td class="SRow1">
+                        <div class="itemSeat" ng-repeat="seat in row">
+                            <span ng-show="$first">{{seat.letter}}</span>
+                            <a ng-class="{'selected': seat.check, 'available': (!seat.check && !seat.booked),  'blocked': seat.booked}" ng-click="seats.select({rang:seatQuality, row:row, seat: seat}, selectedCount)">{{seat.val}}</a>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div> 
+    </div>
+    
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" class="btn btn-danger">
+            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span data-translate="entity.action.delete">Delete</span>
+        </button>
+    </div>
+</form>

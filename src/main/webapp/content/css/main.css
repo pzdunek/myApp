@@ -413,3 +413,17 @@ body {
 .sidemenuLinkRigthRight {
     padding-left: 2.4em !important;
 }
+
+.screen{
+    text-align: center;
+    background-color: #e4e4e4;
+    color: #898989;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 3px 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+} 
+
+

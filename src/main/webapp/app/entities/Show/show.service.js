@@ -7,7 +7,7 @@
     Show.$inject = ['$resource'];
 
     function Show ($resource) {
-        var resourceUrl =  'api/show/:id';
+        var resourceUrl =  'api/shows';
 
         return $resource(resourceUrl, {}, {
             'query': {  
@@ -31,6 +31,11 @@
                     }
                     return data;
                 } 
+            },
+            'getAllFilmsOfSelectedTheater': {  
+                method: 'GET', 
+                isArray: true,
+                params: {theaterName: '@theaterName'}
             }
         });
     }
