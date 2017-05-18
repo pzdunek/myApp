@@ -10,28 +10,20 @@
     function OrderController ($uibModalInstance) {
         var vm = this;
 
-      
+        
+        var reserved = ['A2', 'A3', 'C5', 'C6', 'C7', 'C8', 'J1', 'J2', 'J3', 'J4'];
+        var selected = [];
+
         vm.clear = clear;
-        vm.confirmDelete = confirmDelete;
+        
 
         function clear () {
             $uibModalInstance.dismiss('cancel');
         }
 
-        function confirmDelete () {
-            Powform.delete({
-                kodPowiazanego: entity.id.kodPowiazanego.toUpperCase(),
-                wariantPowiazanego: entity.id.wariantPowiazanego,
-                kodPierwotnego: entity.id.kodPierwotnego.toUpperCase(),
-                wariantPierwotnego: entity.id.wariantPierwotnego
-            },
-            function () {
-                $uibModalInstance.close(true);
-            },
-            function(){
-                CommunicationService.openError('E-POWFORM-CANT-DELETE');
-                $uibModalInstance.close(true);
-            });
+        vm.submitSeats = function(){
+            console.log("wyslano")
         }
+
     }
 })();

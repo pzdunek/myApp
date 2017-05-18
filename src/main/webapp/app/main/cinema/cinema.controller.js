@@ -66,7 +66,17 @@
                 animation: true,
                 backdrop: 'static',
                 size: 'lg'
-    	})};
+    	});
+         modalInstance.result.then(function() {
+                
+                resetModal();
+            }, function() {
+                
+                resetModal();
+            });    
+
+
+    	}
 
 
     	function clear () {
