@@ -5,26 +5,44 @@
   </div>
   <div class="modal-body">
     <div class="row">
-      <div class="screen" style="margin-bottom: 20px";>EKRAN</div>
+      <div class="screen" style="margin-bottom: 20px" ;>EKRAN</div>
     </div>
 
     <div class="row">
 
-    	<table class="seatLayout">
+      <table class="seatLayout">
         <tr>
-            <td class="padding-bottom"></td>
-            <td class="padding-bottom" ng-repeat="col in cols track by $index" ng-bind="col"></td>
+          <td class="padding-bottom"></td>
+          <td class="padding-bottom" ng-repeat="col in cols track by $index" ng-bind="col"></td>
         </tr>
         <tr ng-repeat="row in rows">
-            <td class="padding-right" ng-bind="row"></td>
-            <td class="seats" ng-repeat="col in cols" ng-click="seatClicked(row + col)" ng-switch on="getStatus(row + col)">
-                <div ng-switch-when="selected" class="seatSelected"></div>
-                <div ng-switch-when="reserved" class="seatReserved"></div>
-                <div ng-switch-default class="seat"></div>
-            </td>
+          <td class="padding-right" ng-bind="row"></td>
+          <td class="seats" ng-repeat="col in cols" ng-click="seatClicked(row + col)" ng-switch on="getStatus(row + col)">
+            <div ng-switch-when="selected" class="seatSelected"></div>
+            <div ng-switch-when="reserved" class="seatReserved"></div>
+            <div ng-switch-default class="seat"></div>
+          </td>
         </tr>
-    </table>
-      
+      </table>
+
+      <div>
+
+        <div class="col-sm-4">
+          <div class="seatLegend"></div>
+          <label class="labelLegend">- miejsce wolne</label>
+
+        </div>
+        <div class="col-sm-4">
+          <div class="seatReservedLegend"></div>
+          <label class="labelLegend">- miejsce zajęte</label>
+        </div>
+        <div class="col-sm-4">
+          <div class="seatSelectedLegend"></div>
+          <label class="labelLegend">- miejsce wybrane</label>
+        </div>
+
+      </div>
+
     </div>
   </div>
 
@@ -33,7 +51,7 @@
       <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
     </a>
     <button type="submit" class="btn btn-success">
-      <span class="glyphicon glyphicon-ok"></span>&nbsp;<span >Dalej</span>
+      <span class="glyphicon glyphicon-ok"></span>&nbsp;<span>Dalej</span>
     </button>
   </div>
 </form>

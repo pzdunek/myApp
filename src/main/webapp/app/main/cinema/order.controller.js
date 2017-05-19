@@ -23,6 +23,12 @@
 
         vm.submitSeats = function(){
             console.log("wyslano")
+
+            if(selected.length > 0) {
+                alert("Selected Seats: \n" + selected);
+            } else {
+                alert("No seats selected!");
+            }
         }
 
 
@@ -37,10 +43,15 @@
         // seat onClick
         $scope.seatClicked = function(seatPos) {
             console.log("Selected Seat: " + seatPos);
-            var index = selected.indexOf(seatPos);
-            if(index != -1) {
+            var indexOfSelected = selected.indexOf(seatPos);
+            var indexOfReserved = reserved.indexOf(seatPos);
+            if(indexOfSelected != -1  ) {
                 // seat already selected, remove
-                selected.splice(index, 1)
+                selected.splice(indexOfSelected, 1);
+               
+            } else if(indexOfReserved != -1){
+                
+                selected.splice(indexOfReserved, 1);
             } else {
                 // new seat, push
                 selected.push(seatPos);

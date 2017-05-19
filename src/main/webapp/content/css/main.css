@@ -496,5 +496,56 @@ tr, td{
     text-align: center;
 }
 
+.seatLegend {
+  
+    display: inline-block;
 
+  width: 40px;
+  height: 40px;
+  text-align: center;
+ line-height: 1.5rem;
+  padding: 4px 0;
+  background:  #008000;
+  border-radius: 5px;
+  margin: 5px;
+}
 
+.seatSelectedLegend{
+
+    display: inline-block;
+
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.5rem;
+  padding: 4px 0;
+  background:  #ff9933;
+  border-radius: 5px;
+  animation-duration: 300ms;
+  animation-fill-mode: both;
+  margin: 5px;
+}
+
+.seatReservedLegend{
+    display: inline-block;
+
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.5rem;
+  padding: 4px 0;
+  background:  #c2c2a3;
+  border-radius: 5px;
+  animation-duration: 300ms;
+  animation-fill-mode: both;
+  margin: 5px;
+}
+
+.labelLegend{
+  position: relative;
+  bottom: 20px;
+}
