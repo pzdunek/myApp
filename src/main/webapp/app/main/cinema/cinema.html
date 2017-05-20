@@ -7,26 +7,22 @@
     	<div class="col-sm-4 form-group">
         <label>Szybka rezerwacja </label>
         
-
-
-        <select class="form-control" ng-model="vm.selectedCinema" ng-options="item as item for item in vm.theaters" ng-change="vm.changeThater()">
-        	<option value="" disabled selected>Wybierz kino</option>
-    	</select>
-    	<select class="form-control" ng-model="vm.selectedMovie" ng-options="movie as movie for movie in vm.films" ng-change="vm.changeMovie()">
-        	<option value="" disabled selected>Wybierz film</option>
-    	</select>
-    	<select class="form-control" ng-model="vm.selectedDate" ng-options="date as date for date in vm.dates">
-        	<option value="" disabled selected>Wybierz datę</option>
-    	</select>
-    	<select class="form-control" ng-model="vm.selectedHour">
-        	<option value="" disabled selected>Wybierz godzinę</option>
-        	<option>18:00</option>
-        	<option>21:00</option>
-    	</select>
+           <select class="form-control" ng-model="vm.selectedCinema" ng-options="item as item for item in vm.theaters" ng-change="vm.changeThater()" required>
+            <option value="" disabled selected>Wybierz kino</option>
+        </select>
+        <select class="form-control" ng-model="vm.selectedMovie" ng-options="movie as movie for movie in vm.films" ng-change="vm.changeMovie()" required>
+            <option value="" disabled selected>Wybierz film</option>
+        </select>
+        <select class="form-control" ng-model="vm.selectedDate" ng-options="date as date for date in vm.dates" ng-change="vm.changeDate()" required>
+            <option value="" disabled selected>Wybierz datę</option>
+        </select>
+        <select class="form-control" ng-model="vm.selectedHour" ng-options="hour as hour for hour in vm.hours" ng-change="vm.changeHour()" required>
+            <option value="" disabled selected>Wybierz godzinę</option>
+        </select>
     
-    	<div class="row">
-    		<button type="button" class="btn btn-success" ng-click="vm.order()" style="margin-top: 10px;">Zamawiam</button>
-    	</div>
+        <div class="row">
+            <button type="submit" class="btn btn-success" ng-disabled="vm.cantGoNext" ng-click="vm.order()" style="margin-top: 10px;">Zamawiam</button>
+        </div> 
 
     </div>
     

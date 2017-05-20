@@ -17,14 +17,14 @@ public class Theater implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="theater_name", unique=true, nullable=false, length=11)
+	@Column(name="theater_name", unique=true, nullable=false, length=40)
 	private String theaterName;
 
-	@Column(name="number_of_seats", nullable=false, length=20)
-	private String numberOfSeats;
+	@Column(name="theater_address", nullable=false, length=50)
+	private String theaterAddress;
 
-	@Column(name="number_of_rows", nullable=false, length=1)
-	private String numberOfRows;
+	@Column(name="theater_phone_number", nullable=false, length=11)
+	private int theaterPhoneNumber;
 	
 	//bi-directional many-to-one association to Show
 	@OneToMany(mappedBy="theater")
@@ -41,21 +41,20 @@ public class Theater implements Serializable {
 		this.theaterName = theaterName;
 	}
 
-	public String getNumberOfSeats() {
-		return this.numberOfSeats;
+	public String getTheaterAddress() {
+		return theaterAddress;
 	}
 
-	public void setNumberOfSeats(String numberOfSeats) {
-		this.numberOfSeats = numberOfSeats;
+	public void setTheaterAddress(String theaterAddress) {
+		this.theaterAddress = theaterAddress;
 	}
 
-	
-	public String getNumberOfRows() {
-		return numberOfRows;
+	public int getTheaterPhoneNumber() {
+		return theaterPhoneNumber;
 	}
 
-	public void setNumberOfRows(String numberOfRows) {
-		this.numberOfRows = numberOfRows;
+	public void setTheaterPhoneNumber(int theaterPhoneNumber) {
+		this.theaterPhoneNumber = theaterPhoneNumber;
 	}
 
 	public List<Show> getShows() {

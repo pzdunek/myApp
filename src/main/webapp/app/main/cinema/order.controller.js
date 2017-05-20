@@ -5,14 +5,27 @@
         .module('myApp')
         .controller('OrderController', OrderController);
 
-    OrderController.$inject = ['$uibModalInstance', '$scope'];
+    OrderController.$inject = ['$uibModalInstance', '$scope', 'InitHall', 'cinema'];
 
-    function OrderController ($uibModalInstance, $scope) {
+    function OrderController ($uibModalInstance, $scope, InitHall, cinema) {
         var vm = this;
 
+        vm.cinema = cinema;
         
-        // var reserved = ['A2', 'A3', 'C5', 'C6', 'C7', 'C8', 'J1', 'J2', 'J3', 'J4'];
-        // var selected = [];
+
+        getRowsAndCols();
+        function getRowsAndCols(){
+            InitHall.getRowsAndCols({
+                 theaterName: vm.cinema
+            }, function(response){
+                var colsDownloaded = response.cols;
+                var rowsDownloaded = response.rows;
+                $scope.rows = rowsDownloaded;
+                $scope.cols = colsDownloaded;
+           });
+
+        }
+        
 
         vm.clear = clear;
         
@@ -33,8 +46,8 @@
 
 
          // Init layout
-        $scope.rows = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
-        $scope.cols = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+        // $scope.rows = rowsDownloaded;
+        // $scope.cols = colsDownloaded;
 
         // Set reserved and selected
         var reserved = ['A2', 'A3', 'C5', 'C6', 'C7', 'C8', 'J1', 'J2', 'J3', 'J4','A1', 'F7'];
