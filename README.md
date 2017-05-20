@@ -20,4 +20,4 @@ After select.
 ![powybraniu](https://cloud.githubusercontent.com/assets/22048683/26279512/80b73c4a-3db6-11e7-9fa8-ef86c7fa3346.png)
 
 Example layout
-[wybormiejsc](https://cloud.githubusercontent.com/assets/22048683/26279513/828231ec-3db6-11e7-875e-16df31008d13.png)
+![wybormiejsc](https://cloud.githubusercontent.com/assets/22048683/26279513/828231ec-3db6-11e7-875e-16df31008d13.png)
