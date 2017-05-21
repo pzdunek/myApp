@@ -11,9 +11,7 @@ import org.springframework.data.repository.query.Param;
 import pl.zdunek.myapp.domain.entity.Theater;
 
 
-/**
- * Spring Data JPA repository for the User entity.
- */
+
 public interface TheaterRepository extends JpaRepository<Theater, String> {
 	
 
